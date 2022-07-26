@@ -1,6 +1,6 @@
 # LePetitPeintreDesVosges
 
-Le Site LePetitPeintreDesVosges présent les copies des plus grande oeuvre dans le monde de la peinture
+Le Site LePeintreDesVosges vendant des tableaux sur les paysages vosgiens
 
 ## Environnement de developpement
 
@@ -17,9 +17,14 @@ Verifier les pré-requis avec la commande symfony CLI
 symfony check:requirements
 ```
 
-## Lancer l'environnement de developpment 
+### Lancer l'environnement de developpment 
 
 ```bash
 symfony server:start
 symfony server:stop pour arreter le serveur
+````
+## Jouer les fixtures 
+
+```bash
+symfony console doctrine:fixtures:load
 ````

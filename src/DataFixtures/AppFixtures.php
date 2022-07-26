@@ -77,7 +77,7 @@ class AppFixtures extends Fixture
                 ->setEnVente($faker->randomElement([true, false]))
                 ->setDateRealisation($faker->dateTimeBetween('-1 month', 'now'))
                 ->setDate($faker->dateTimeBetween('-1 month', 'now'))
-                ->setDescription($faker->text())
+                ->setDescription($faker->text(350))
                 ->setPortefolio($faker->randomElement([true, false]))
                 ->setSlug($faker->slug())
                 ->setFile('/img/placeholder.jpeg')

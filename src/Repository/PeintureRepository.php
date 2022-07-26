@@ -39,6 +39,18 @@ class PeintureRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @return Peinture[] Retourne un array de l'objet Peinture
+     */
+    public function lastTree(int $nb=0) // Je type pour m'assurer que je récupère un nombre
+    {
+        return $this->createQueryBuilder('p') // Création de la requête
+        ->orderBy('p.id', 'DESC') // On trie du plus récent au plus ancien
+        ->setMaxResults($nb) // On récupère la variable
+        ->getQuery() // On execute la requête
+        ->getResult(); // On demande le résultat
+    }
+
 //    /**
 //     * @return Peinture[] Returns an array of Peinture objects
 //     */

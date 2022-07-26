@@ -39,6 +39,16 @@ class BlogpostRepository extends ServiceEntityRepository
         }
     }
 
+    public function lasTree(int $nb=0)
+    {
+        return $this
+        ->createQueryBuilder('b')
+        ->orderBy('b.id', 'DESC')
+        ->setMaxResults($nb)
+        ->getQuery()
+        ->getResult();
+    }
+
 //    /**
 //     * @return Blogpost[] Returns an array of Blogpost objects
 //     */

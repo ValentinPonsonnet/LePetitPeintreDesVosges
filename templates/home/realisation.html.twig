@@ -1,59 +1,25 @@
-<section>
-    <div class="container-fluid p-3">
-    <h2>Les dernière réalisations</h2>
+<section class="pt-8 pt-md-11">
+    <div class="container p-3">
         <div class="row">
-            <div class="col-3 col-lg-4 d-flex">
-                <div class="card" style="width: 18rem;">
-                    <img src="/img/viticole.jpeg" class="card-img-top" alt="...">
+            <div class="col-12">
+            <h2 class="mb-0">
+                Les dernière réalisations
+            </h2>
+        </div>
+        <div class="row">
+            {% for peinture in peintures %}
+            <div class="col-4">
+                <div class="card p-3" style="width: 18rem;">
+                    <img src="{{peinture.file}}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">La récolte du raisin</h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Adipisci optio iusto libero autem provident aspernatur, nemo voluptatem omnis amet. 
-                            A nostrum dolorum velit aut inventore repudiandae eos maiores ea explicabo!
-                        </p>
+                        <h5 class="card-title">{{peinture.nom}}</h5>
+                        <p class="card-text">{{peinture.description|u.truncate(150,'...',false)}}</p>
                         <a href="#" class="btn btn-primary">Go somewhere</a>
+
                     </div>
                 </div>
             </div>
-            <div class="col-3 col-lg-4 d-flex">
-                <div class="card" style="width: 18rem;">
-                    <img src="/img/printemps.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">La maison dans la forêt</h5>
-                        <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                        Quibusdam consequatur, officiis ea id, tenetur nam numquam sint quaerat totam tempore cumque quisquam ipsum quod atque nulla ducimus reiciendis officia ab?
-                        </p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 col-lg-4 d-flex">
-                <div class="card" style="width: 18rem;">
-                    <img src="/img/ete.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Un été dans la prairie</h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                            Quis eos assumenda sapiente possimus cupiditate earum veniam aspernatur expedita quibusdam ab officiis veritatis laboriosam, voluptatem sint tenetur quae. 
-                            Recusandae, soluta molestias?</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-3 col-lg-4 d-flex">
-                <div class="card" style="width: 18rem;">
-                    <img src="/img/automne.jpeg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">L'automne dans la forêt</h5>
-                        <p class="card-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            Facilis culpa tempore quo aspernatur, similique consequuntur veritatis sunt, sit id excepturi voluptatum reprehenderit obcaecati eos ea quis vero recusandae quasi hic.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

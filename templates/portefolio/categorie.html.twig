@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Portefolio{% endblock %}
+
+{% block body %}
+<section>
+    <div class="container">
+        <div class="row">            
+            <h2 class="text-center">{{ categorie.nom}}</h2>
+            <p class="text-center">{{ categorie.description }}</p>
+            {% for peinture in peintures %}
+                <div class="col-4">
+                        <div class="card mb-3" style="width: 18rem;">
+                            <a href="">
+                                <img src="{{peinture.file}}" class="card-img-top" alt="...">
+                            </a>
+                        </div>
+                    </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

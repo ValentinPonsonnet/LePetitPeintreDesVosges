@@ -48,7 +48,7 @@ class AppFixtures extends Fixture
             $blogpost
             ->setTitre($faker->words(3, true))
             ->setDate($faker->dateTimeBetween('-1 day', 'now'))
-            ->setContenu($faker->text(350))
+            ->setContenu($faker->paragraph(350))
             ->setSlug($faker->slug(3))
             ->setUser($user);
 
@@ -75,9 +75,9 @@ class AppFixtures extends Fixture
                 ->setLargeur($faker->randomFloat(2, 20, 60))
                 ->setHauteur($faker->randomFloat(2, 20, 60))
                 ->setEnVente($faker->randomElement([true, false]))
-                ->setDateRealisation($faker->dateTimeBetween('-1 month', 'now'))
+                ->setDateRealisation($faker->dateTimeBetween('-1 day', 'now'))
                 ->setDate($faker->dateTimeBetween('-1 month', 'now'))
-                ->setDescription($faker->text(350))
+                ->setDescription($faker->paragraph(350))
                 ->setPortefolio($faker->randomElement([true, false]))
                 ->setSlug($faker->slug())
                 ->setFile('/img/placeholder.jpeg')

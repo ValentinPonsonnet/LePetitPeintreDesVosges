@@ -32,6 +32,7 @@ class AppFixtures extends Fixture
         ->setEmail('user@gmail.com')
         ->setPrenom($faker->firstName())
         ->setNom($faker->lastName())
+        ->setRoles(['Peintre'])
         ->setTelephone($faker->phoneNumber())
         ->setApropos($faker->text())
         ->setInstagram('instagram');

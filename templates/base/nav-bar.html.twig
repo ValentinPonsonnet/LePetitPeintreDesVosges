@@ -20,11 +20,11 @@
           <a class="nav-link" href="{{path ("a_propos") }}">A propos</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Portefolio</a>
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="{{ path ("portefolio") }}" role="button" aria-haspopup="true" aria-expanded="false">Portefolio</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Catégorie 1</a>
-            <a class="dropdown-item" href="#">Catégorie 2</a>
-            <a class="dropdown-item" href="#">Catégorie 3</a>
+            {% for categorie in categorieNavbar () %}
+              <a class="dropdown-item" href="{{path ("portefolio_categorie", {"slug" : categorie.slug })}}">{{categorie.nom}}</a>
+            {% endfor %}
         </li>
       </ul>
       <li class="d-flex">

@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class PeintureController extends AbstractController
 {
     /**
-     * @Route("/Realisation", name="réalisations")
+     * @Route("/realisation", name="réalisations")
      */
     public function index(
         PeintureRepository $peintureRepository,

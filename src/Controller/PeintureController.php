@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Peinture;
 use App\Repository\PeintureRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -18,16 +19,26 @@ class PeintureController extends AbstractController
         PeintureRepository $peintureRepository,
         PaginatorInterface $paginator,
         Request $request
-    ): Response
-    {
+    ): Response {
         $data = $peintureRepository->findAll();
 
         $peintures = $paginator->paginate(
             $data,
             $request->query->getInt('page', 1),
-            6);
+            6
+        );
         return $this->render('peinture/realisations.html.twig', [
             'peintures' => $peintures,
+        ]);
+    }
+    /**
+     * @Route("realisations/{slug}", name="realisation_detail")
+     */
+    
+    public function details(Peinture $peinture): Response
+    {
+        return $this->render('peinture/detail.html.twig', [
+            'peinture' => $peinture,
         ]);
     }
 }

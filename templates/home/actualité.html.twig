@@ -11,7 +11,9 @@
             <div class="col-4">
                 <div class="card p-3" style="width: 18rem;">
                     <div class="card-body">
+                        <a href="{{ path ('blogpost_detail', {"slug" : blogpost.slug} )}}">
                         <h5 class="card-title">{{blogpost.titre}}</h5>
+                        </a>
                         <p class="card-text">{{blogpost.contenu|u.truncate(150, '...', false)}}</p>
                         <p>Ecrit le : {{blogpost.date|date('d/m/Y')}}</p>
                     </div>

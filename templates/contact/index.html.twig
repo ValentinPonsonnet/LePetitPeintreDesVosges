@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block body %}
+
+    <section>
+        <div class="container d-flex flex-column">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-12 col-md-6">
+                    <h2 class="text-center mb-2">Me contacter</h2>
+                    <p class="text-center text-muted-0">
+                        Une question ? Envie d'acheter une toile ? N'hésitez pas à me contacter
+                    </p>
+                    <hr>
+                        {{ form_start(form) }}
+                            {% for message in app.flashes('success') %}
+                                <div class="alert alert-success">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {{ form_end(form)}}
+                    </hr>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -8,6 +8,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\SlugField;
 
 class BlogpostCrudController extends AbstractCrudController
 {
@@ -22,7 +23,8 @@ class BlogpostCrudController extends AbstractCrudController
             TextField::new('titre'),
             TextField::new('slug')->hideOnForm(),
             TextareaField::new('contenu')->setMaxLength(50),
-            DateField::new('Date')->hideOnForm()
+            DateField::new('Date')->hideOnForm(),
+            SlugField::new('slug')->setTargetFieldName('titre')->hideOnIndex()
         ];
     }
     public function configureCrud(Crud $crud): Crud

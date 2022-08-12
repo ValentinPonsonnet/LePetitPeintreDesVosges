@@ -17,7 +17,7 @@
             <div class="col-4">
                 <div class="card mb-3" style="width: 18rem;">
                     <a href="{{path ('realisation_detail', {"slug": peinture.slug}) }}" class="card-img-top">
-                    <img src="{{peinture.file}}" class="card-img-top" alt="...">
+                    <img src="{{vich_uploader_asset(peinture, 'imageFile')}}" class="card-img-top" alt="...">
                     </a>
                     <div class="card-body">
                         <h5 class="card-title">{{peinture.nom}}</h5>
